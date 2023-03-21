@@ -1,0 +1,10 @@
+node_modules
+vendor
+*.jpg
+*.png
+*.svg
+*.html
+*.mp3
+*.mp4
+templates_compiled
+languages
