@@ -251,7 +251,51 @@ class User
     return $get_country->fetch_assoc();
   }
 
+  /* ------------------------------- */
+  /* System User Groups */
+  /* ------------------------------- */
 
+  /**
+   * get_countries
+   * 
+   * @return array
+   */
+  public function get_user_groups()
+  {
+    global $db, $system;
+    $user_groups = [];
+    $get_user_groups = $db->query("SELECT * FROM user_group ORDER BY order_field  ASC") or _error("SQL_ERROR_THROWEN");
+    if ($get_user_groups->num_rows > 0) {
+      while ($user_group = $get_user_groups->fetch_assoc()) {
+        $user_group['id'] = $user_group['group_id'];
+        $user_group['group_name'] = __($user_group['group_name']);
+        $user_groups[] = $user_group;
+      }
+    }
+    return $user_groups;
+  }
+
+
+  /* ------------------------------- */
+  /* Check User Role Capacity */
+  /* ------------------------------- */
+
+  /**
+   * get_countries
+   * 
+   * @return array
+   */
+  public function check_capability($group_id,$action)
+  {
+    global $db, $system;
+    $sql = sprintf("SELECT * FROM user_group WHERE group_id = %s AND ".$action." = 1",secure($group_id,'int'));
+    $get_user_groups = $db->query($sql) or _error("SQL_ERROR_THROWEN");
+    if ($get_user_groups->num_rows > 0) {
+      return TRUE;
+    } else{
+      return FALSE;
+    }
+  }
 
   /* ------------------------------- */
   /* System Currencies */

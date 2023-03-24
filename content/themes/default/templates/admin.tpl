@@ -169,6 +169,11 @@
 
             {if $user->_is_admin}
               <!-- Users -->
+              <li {if $view == "roles"}class="active" {/if}>
+                <a href="{$system['system_url']}/{$control_panel['url']}/roles">
+                  <i class="fa fa-users fa-fw mr10" style="color: #F44336"></i>{__("User Groups")}
+                </a>
+              </li>
               <li {if $view == "users"}class="active" {/if}>
                 <a href="#users" data-toggle="collapse" {if $view == "users"}aria-expanded="true" {/if}>
                   <i class="fa fa-user fa-fw mr10" style="color: #F44336"></i>{__("Users")}

@@ -492,6 +492,13 @@ try {
       $db->query(sprintf("DELETE FROM announcements WHERE announcement_id = %s", secure($_POST['id'], 'int'))) or _error("SQL_ERROR_THROWEN");
       break;
 
+    case 'roles':
+      // check admin|moderator permission
+      if(!$user->check_capability($user->_data['user_group'], 'created_user_grp')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
+      }
+      $db->query(sprintf("DELETE FROM user_group WHERE group_id = %s", secure($_POST['id'], 'int'))) or _error("SQL_ERROR_THROWEN");
+      break;
     default:
       _error(400);
       break;

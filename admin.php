@@ -738,6 +738,11 @@ try {
           /* assign variables */
           $smarty->assign('countries', $countries);
 
+          // get countries
+          $user_groups = $user->get_user_groups();
+          /* assign variables */
+          $smarty->assign('user_groups', $user_groups);
+          
           // assign variables
           $smarty->assign('data', $data);
 
@@ -1997,7 +2002,58 @@ try {
           break;
       }
       break;
+      
+    case 'roles':
+      // get nested view content
+      switch ($_GET['sub_view']) {
+        case '':
+          // page header
+          page_header($control_panel['title'] . " &rsaquo; " . __("Games"));
 
+          // get data
+          $get_rows = $db->query("SELECT * FROM user_group ORDER BY order_field ASC") or _error("SQL_ERROR");
+          if ($get_rows->num_rows > 0) {
+            while ($row = $get_rows->fetch_assoc()) {
+              // $row['title_url'] = get_url_text($row['group_name']);
+              // $row['thumbnail'] = get_picture($row['thumbnail'], 'game');
+              $rows[] = $row;
+            }
+          }
+
+          // assign variables
+          $smarty->assign('rows', $rows);
+          break;
+
+        case 'edit':
+          // valid inputs
+          if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
+            _error(404);
+          }
+
+          // get data
+          $get_data = $db->query(sprintf("SELECT * FROM user_group WHERE group_id = %s", secure($_GET['id'], 'int'))) or _error("SQL_ERROR");
+          if ($get_data->num_rows == 0) {
+            _error(404);
+          }
+          $data = $get_data->fetch_assoc();
+
+          // assign variables
+          $smarty->assign('data', $data);
+
+          // page header
+          page_header($control_panel['title'] . " &rsaquo; " . __("User Groups") . " &rsaquo; " . $data['title']);
+          break;
+
+        case 'add':
+          // page header
+          page_header($control_panel['title'] . " &rsaquo; " . __("User Groups") . " &rsaquo; " . __("Add New"));
+          break;
+
+        default:
+          _error(404);
+          break;
+      }
+      break;
     case 'ads':
       // check admin|moderator permission
       if ($user->_is_moderator) {

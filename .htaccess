@@ -270,6 +270,10 @@ RewriteRule ^games/?$ games.php [L,QSA]
 RewriteRule ^games/played/?$ games.php?view=played [L,QSA]
 RewriteRule ^games/([^/]+)/([^/]+)/?$ games.php?view=game&game_id=$1 [L,QSA]
 
+# Roles
+RewriteRule ^roles/?$ roles.php [L,QSA]
+RewriteRule ^roles/([^/]+)/([^/]+)/?$ roles.php?view=role&group_id=$1 [L,QSA]
+
 # Moderator Panel
 RewriteRule ^modcp/?$ moderator.php [L,QSA]
 RewriteRule ^modcp/([^/]+)/?$ moderator.php?view=$1 [L,QSA]

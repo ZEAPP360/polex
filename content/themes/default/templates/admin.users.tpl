@@ -319,15 +319,10 @@
               </label>
               <div class="col-md-9">
                 <select class="form-control" name="user_group">
-                  <option value="1" {if $data['user_group'] == '1'}selected{/if}>
-                    {__("Administrators")}
-                  </option>
-                  <option value="2" {if $data['user_group'] == '2'}selected{/if}>
-                    {__("Moderators")}
-                  </option>
-                  <option value="3" {if $data['user_group'] == '3'}selected{/if}>
-                    {__("Users")}
-                  </option>
+                    <option value="none">{__("Select User Group")}</option>
+                    {foreach $user_groups as $user_group}
+                      <option {if $user_group['id'] == $data['user_group']}selected{/if} value="{$user_group['id']}">{$user_group['group_name']}</option>
+                    {/foreach}
                 </select>
               </div>
             </div>
