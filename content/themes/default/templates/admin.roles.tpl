@@ -107,18 +107,18 @@
                   </label>
                 </div>
                 <div class="col col-lg-9">
-                  <div class="form-control-label h6">{__("Create articles")}</div>
+                  <div class="form-control-label h6">{__("Create Articles")}</div>
                 </div>
               </div>
               <div class="row">
                 <div class="col col-lg-3">
-                  <label class="switch" for="share">
-                    <input type="checkbox" name="share" id="share" {if $data['share']==1}checked{/if}>
+                  <label class="switch" for="share_post">
+                    <input type="checkbox" name="share_post" id="share_post" {if $data['share_post']==1}checked{/if}>
                     <span class="slider round"></span>
                   </label>
                 </div>
                 <div class="col col-lg-9">
-                  <div class="form-control-label h6">{__("share")}</div>
+                  <div class="form-control-label h6">{__("Share Post")}</div>
                 </div>
               </div>
               <div class="row">
@@ -184,7 +184,7 @@
                   </label>
                 </div>
                 <div class="col col-lg-9">
-                  <div class="form-control-label h6">{__("add friends")}</div>
+                  <div class="form-control-label h6">{__("Add Friends")}</div>
                 </div>
               </div>
               <div class="row">
@@ -195,7 +195,7 @@
                   </label>
                 </div>
                 <div class="col col-lg-9">
-                  <div class="form-control-label h6">{__("Follow Pages")}</div>
+                  <div class="form-control-label h6">{__("Follow Page")}</div>
                 </div>
               </div>
             </div>
@@ -213,8 +213,8 @@
               </div>
               <div class="row">
                 <div class="col col-lg-3">
-                  <label class="switch" for="manager_user">
-                    <input type="checkbox" name="manager_user" id="manager_user"  {if $data['manager_user']==1}checked{/if}>
+                  <label class="switch" for="manage_user">
+                    <input type="checkbox" name="manage_user" id="manage_user"  {if $data['manage_user']==1}checked{/if}>
                     <span class="slider round"></span>
                   </label>
                 </div>
@@ -224,8 +224,8 @@
               </div>
               <div class="row">
                 <div class="col col-lg-3">
-                  <label class="switch" for="created_user_grp">
-                    <input type="checkbox" name="created_user_grp" id="created_user_grp"  {if $data['created_user_grp']==1}checked{/if}>
+                  <label class="switch" for="create_user_group">
+                    <input type="checkbox" name="create_user_group" id="create_user_group"  {if $data['create_user_group']==1}checked{/if}>
                     <span class="slider round"></span>
                   </label>
                 </div>
@@ -340,6 +340,15 @@
           </div>
         </div>
 
+        <div class="form-group form-row">
+          <label class="col-md-3 form-control-label">
+            {__("Order Field")}
+          </label>
+          <div class="col-md-9">
+            <input class="form-control" name="order_field">
+          </div>
+        </div>
+
         <div class="container">
           <div class="row">
             <div class="col col-lg-6">
@@ -362,18 +371,29 @@
                   </label>
                 </div>
                 <div class="col col-lg-9">
-                  <div class="form-control-label h6">{__("Create articles")}</div>
+                  <div class="form-control-label h6">{__("Create Articles")}</div>
                 </div>
               </div>
               <div class="row">
                 <div class="col col-lg-3">
-                  <label class="switch" for="share">
-                    <input type="checkbox" name="share" id="share" checked>
+                  <label class="switch" for="edit_article">
+                    <input type="checkbox" name="edit_article" value="0" id="edit_article" checked>
                     <span class="slider round"></span>
                   </label>
                 </div>
                 <div class="col col-lg-9">
-                  <div class="form-control-label h6">{__("share")}</div>
+                  <div class="form-control-label h6">{__("Edit Article")}</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-lg-3">
+                  <label class="switch" for="share_post">
+                    <input type="checkbox" name="share_post" id="share_post" checked>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                <div class="col col-lg-9">
+                  <div class="form-control-label h6">{__("Share Post")}</div>
                 </div>
               </div>
               <div class="row">
@@ -439,7 +459,7 @@
                   </label>
                 </div>
                 <div class="col col-lg-9">
-                  <div class="form-control-label h6">{__("add friends")}</div>
+                  <div class="form-control-label h6">{__("Add Friends")}</div>
                 </div>
               </div>
               <div class="row">
@@ -468,8 +488,8 @@
               </div>
               <div class="row">
                 <div class="col col-lg-3">
-                  <label class="switch" for="manager_user">
-                    <input type="checkbox" name="manager_user" id="manager_user" checked>
+                  <label class="switch" for="manage_user">
+                    <input type="checkbox" name="manage_user" id="manage_user" checked>
                     <span class="slider round"></span>
                   </label>
                 </div>
@@ -479,13 +499,13 @@
               </div>
               <div class="row">
                 <div class="col col-lg-3">
-                  <label class="switch" for="created_user_grp">
-                    <input type="checkbox" name="created_user_grp" id="created_user_grp" checked>
+                  <label class="switch" for="create_user_group">
+                    <input type="checkbox" name="create_user_group" id="create_user_group" checked>
                     <span class="slider round"></span>
                   </label>
                 </div>
                 <div class="col col-lg-9">
-                  <div class="form-control-label h6">{__("Cretea User Group")}</div>
+                  <div class="form-control-label h6">{__("Crete User Group")}</div>
                 </div>
               </div>
               <div class="row">
