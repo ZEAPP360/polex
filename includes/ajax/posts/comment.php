@@ -15,6 +15,11 @@ is_ajax();
 
 // user access
 user_access(true);
+// check admin|moderator permission
+if(!$user->check_capability($user->_data['user_group'], 'add_comment')){
+  modal("MESSAGE", __("System Message"), __("You don't have the right permission to post this"));
+}
+
 
 // check demo account
 if ($user->_data['user_demo']) {

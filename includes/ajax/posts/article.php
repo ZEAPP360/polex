@@ -29,6 +29,9 @@ try {
 
   switch ($_GET['do']) {
     case 'create':
+      if(!$user->check_capability($user->_data['user_group'], 'create_article')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
+      }
       // create article
       $post_id = $user->post_article($_POST['publish_to'], $_POST['page_id'], $_POST['group_id'], $_POST['event_id'], $_POST['title'], $_POST['text'], $_POST['cover'], $_POST['category'], $_POST['tags']);
 
@@ -37,6 +40,9 @@ try {
       break;
 
     case 'edit':
+      if(!$user->check_capability($user->_data['user_group'], 'edit_article')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
+      }
       // valid inputs
       if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
         _error(400);

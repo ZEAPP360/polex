@@ -20,6 +20,7 @@ if ($user->_logged_in || !$system['system_public']) {
   user_access();
 }
 
+
 try {
 
   // get view content
@@ -75,9 +76,12 @@ try {
     case 'article':
       // get article
       $article = $user->get_post($_GET['post_id']);
-      if (!$article) {
+      // check blogs permission
+      if(!$article && !$user->check_capability($user->_data['user_group'], 'view_article')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
         _error(404);
       }
+
       /* assign variables */
       $smarty->assign('article', $article);
 
@@ -115,7 +119,8 @@ try {
       user_access();
 
       // check blogs permission
-      if (!$user->_data['can_write_articles']) {
+      if(!$user->check_capability($user->_data['user_group'], 'edit_article')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
         _error(404);
       }
 
@@ -141,30 +146,38 @@ try {
       user_access();
 
       // check blogs permission
-      if (!$user->_data['can_write_articles']) {
+      if(!$user->check_capability($user->_data['user_group'], 'create_article')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
         _error(404);
       }
+
 
       // page header
       page_header(__("Write New Article"), __($system['system_description_blogs']));
 
       // prepare publisher
       /* publish-to options */
-      $share_to = "timeline";
-      if (isset($_GET['page'])) {
-        $share_to = "page";
-        $share_to_page_id = (int) $_GET['page'];
-        $smarty->assign('share_to_page_id', $share_to_page_id);
-      } elseif (isset($_GET['group'])) {
-        $share_to = "group";
-        $share_to_group_id = (int) $_GET['group'];
-        $smarty->assign('share_to_group_id', $share_to_group_id);
-      } elseif (isset($_GET['event'])) {
-        $share_to = "event";
-        $share_to_event_id = (int) $_GET['event'];
-        $smarty->assign('share_to_event_id', $share_to_event_id);
+      if(!$article && !$user->check_capability($user->_data['user_group'], 'share_post')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
+        _error(404);
+      } else {
+        $share_to = "timeline";
+        if (isset($_GET['page'])) {
+          $share_to = "page";
+          $share_to_page_id = (int) $_GET['page'];
+          $smarty->assign('share_to_page_id', $share_to_page_id);
+        } elseif (isset($_GET['group'])) {
+          $share_to = "group";
+          $share_to_group_id = (int) $_GET['group'];
+          $smarty->assign('share_to_group_id', $share_to_group_id);
+        } elseif (isset($_GET['event'])) {
+          $share_to = "event";
+          $share_to_event_id = (int) $_GET['event'];
+          $smarty->assign('share_to_event_id', $share_to_event_id);
+        }
+        $smarty->assign('share_to', $share_to);
       }
-      $smarty->assign('share_to', $share_to);
+
       /* get user pages */
       $pages = $user->get_pages(array('managed' => true, 'user_id' => $user->_data['user_id']));
       $smarty->assign('pages', $pages);

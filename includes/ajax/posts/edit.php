@@ -15,6 +15,56 @@ is_ajax();
 
 // user access
 user_access(true);
+switch ($_POST['handle']) {
+  case 'comment':
+    if(!$user->check_capability($user->_data['user_group'], 'edit_comment')){
+      modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
+    }
+    break;
+
+  case 'post':
+    if(!$user->check_capability($user->_data['user_group'], 'edit_article')){
+      modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
+    }
+    break;
+
+  case 'product':
+    if(!$user->check_capability($user->_data['user_group'], 'edit_article')){
+      modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
+    }
+    break;
+
+  case 'funding':
+    if(!$user->check_capability($user->_data['user_group'], 'edit_article')){
+      modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
+    }
+    break;
+
+  case 'offer':
+    if(!$user->check_capability($user->_data['user_group'], 'edit_article')){
+      modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
+    }
+    break;
+
+  case 'job':
+    if(!$user->check_capability($user->_data['user_group'], 'add_jobs')){
+      modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
+    }
+    break;
+
+  case 'privacy':
+    if(!$user->check_capability($user->_data['user_group'], 'edit_article')){
+      modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
+    }
+    break;
+
+  default:
+    _error(400);
+    break;
+}
+
+
+
 
 // check demo account
 if ($user->_data['user_demo']) {

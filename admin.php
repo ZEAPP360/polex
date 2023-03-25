@@ -2017,13 +2017,13 @@ try {
       switch ($_GET['sub_view']) {
         case '':
           // page header
-          page_header($control_panel['title'] . " &rsaquo; " . __("Games"));
+          page_header($control_panel['title'] . " &rsaquo; " . __("User Roles"));
 
           // get data
           $get_rows = $db->query("SELECT * FROM user_group ORDER BY order_field ASC") or _error("SQL_ERROR");
           if ($get_rows->num_rows > 0) {
             while ($row = $get_rows->fetch_assoc()) {
-              // $row['title_url'] = get_url_text($row['group_name']);
+              $row['title_url'] = get_url_text($row['group_name']);
               // $row['thumbnail'] = get_picture($row['thumbnail'], 'game');
               $rows[] = $row;
             }

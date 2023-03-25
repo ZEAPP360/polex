@@ -82,11 +82,13 @@ class User
         }
         /* check pages permission */
         if ($system['pages_enabled']) {
-          $this->_data['can_create_pages'] = $this->check_module_permission($system['pages_permission']);
+          $this->_data['can_create_pages'] = //($user->check_capability($user->_data['user_group'], 'create_page' == 1)) ? true : false;          
+            $this->check_module_permission($system['pages_permission']);
         }
         /* check groups permission */
         if ($system['groups_enabled']) {
-          $this->_data['can_create_groups'] = $this->check_module_permission($system['groups_permission']);
+          $this->_data['can_create_groups'] = //($user->check_capability($user->_data['user_group'], 'create_user_group' == 1)) ? true : false;
+          $this->check_module_permission($system['groups_permission']);
         }
         /* check events permission */
         if ($system['events_enabled']) {
@@ -110,7 +112,8 @@ class User
         }
         /* check ads permission */
         if ($system['ads_enabled']) {
-          $this->_data['can_create_ads'] = $this->check_module_permission($system['ads_permission']);
+          $this->_data['can_create_ads'] =  //($user->check_capability($user->_data['user_group'], 'add_jobs' == 1)) ? true : false;
+            $this->check_module_permission($system['ads_permission']);
         }
         /* check forums permission */
         if ($system['forums_enabled']) {

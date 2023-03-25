@@ -33,6 +33,9 @@ try {
 
   switch ($_POST['do']) {
     case 'delete_post':
+      if(!$user->check_capability($user->_data['user_group'], 'delete_article')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
+      }
       // delete post
       $refresh = $user->delete_post($_POST['id']);
       if ($refresh) {
@@ -43,6 +46,9 @@ try {
 
     case 'approve_post':
       // approve post
+      if(!$user->check_capability($user->_data['user_group'], 'approve_article')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
+      }
       $user->approve_post($_POST['id']);
       break;
 
@@ -148,31 +154,49 @@ try {
 
     case 'delete_comment':
       // delete comment
+      if(!$user->check_capability($user->_data['user_group'], 'edit_comment')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
+      }
       $user->delete_comment($_POST['id']);
       break;
 
     case 'react_comment':
       // react comment
+      if(!$user->check_capability($user->_data['user_group'], 'likes')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
+      }
       $user->react_comment($_POST['id'], $_POST['reaction']);
       break;
 
     case 'unreact_comment':
       // unreact comment
+      if(!$user->check_capability($user->_data['user_group'], 'likes')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
+      }
       $user->unreact_comment($_POST['id'], $_POST['reaction']);
       break;
 
     case 'add_vote':
       // add vote
+      if(!$user->check_capability($user->_data['user_group'], 'star_rate')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
+      }
       $user->add_vote($_POST['id']);
       break;
 
     case 'delete_vote':
       // delete vote
+      if(!$user->check_capability($user->_data['user_group'], 'likes')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
+      }
       $user->delete_vote($_POST['id']);
       break;
 
     case 'change_vote':
       // valid inputs
+      if(!$user->check_capability($user->_data['user_group'], 'likes')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
+      }
       if (!isset($_POST['checked_id']) || !is_numeric($_POST['checked_id'])) {
         _error(400);
       }
