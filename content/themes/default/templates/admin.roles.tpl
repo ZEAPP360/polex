@@ -101,8 +101,8 @@
               </div>
               <div class="row">
                 <div class="col col-lg-3">
-                  <label class="switch" for="create_articles">
-                    <input type="checkbox" name="create_articles" value="0" id="create_articles" {if $data['create_articles']==1}checked{/if}>
+                  <label class="switch" for="create_article">
+                    <input type="checkbox" name="create_article" value="0" id="create_article" {if $data['create_article']==1}checked{/if}>
                     <span class="slider round"></span>
                   </label>
                 </div>
@@ -475,13 +475,13 @@
               </div>
               <div class="row">
                 <div class="col col-lg-3">
-                  <label class="switch" for="create_articles">
-                    <input type="checkbox" name="create_articles" value="0" id="create_articles" checked>
+                  <label class="switch" for="create_article">
+                    <input type="checkbox" name="create_article" value="0" id="create_article" checked>
                     <span class="slider round"></span>
                   </label>
                 </div>
                 <div class="col col-lg-9">
-                  <div class="form-control-label h6">{__("Create Articles")}</div>
+                  <div class="form-control-label h6">{__("Create Article")}</div>
                 </div>
               </div>
               <div class="row">
