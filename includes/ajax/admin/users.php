@@ -16,8 +16,9 @@ require('../../../bootstrap.php');
 // check AJAX Request
 is_ajax();
 
+
 // check admin|moderator permission
-if (!$user->_is_admin) {
+if(!$user->check_capability($user->_data['user_group'], 'control_panel_setting')){
   modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
 }
 

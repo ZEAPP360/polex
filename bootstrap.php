@@ -295,7 +295,7 @@ $smarty->assign('reactions', $reactions);
 
 
 // init control panel
-if ($user->_is_admin) {
+if($user->check_capability($user->_data['user_group'], 'control_panel_setting')) {
   $control_panel['title'] = __("Admin");
   $control_panel['url'] = "admincp";
 } elseif ($user->_is_moderator) {

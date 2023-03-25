@@ -32,7 +32,7 @@ try {
 
     case 'theme':
       // check admin|moderator permission
-      if (!$user->_is_admin) {
+      if(!$user->check_capability($user->_data['user_group'], 'control_panel_setting')){
         modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
       }
       /* check if this theme is the default one */
@@ -53,7 +53,7 @@ try {
 
     case 'country':
       // check admin|moderator permission
-      if (!$user->_is_admin) {
+      if(!$user->check_capability($user->_data['user_group'], 'control_panel_setting')){
         modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
       }
       $db->query(sprintf("DELETE FROM system_countries WHERE country_id = %s", secure($_POST['id'], 'int'))) or _error("SQL_ERROR_THROWEN");
@@ -69,7 +69,7 @@ try {
 
     case 'gender':
       // check admin|moderator permission
-      if (!$user->_is_admin) {
+      if(!$user->check_capability($user->_data['user_group'], 'control_panel_setting')){
         modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
       }
       $db->query(sprintf("DELETE FROM system_genders WHERE gender_id = %s", secure($_POST['id'], 'int'))) or _error("SQL_ERROR_THROWEN");

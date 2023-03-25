@@ -17,15 +17,19 @@ require('bootloader.php');
 user_access();
 
 // check admin|moderator permission
-if (!$user->_is_admin && !$user->_is_moderator) {
-  _error(__('System Message'), __("You don't have the right permission to access this"));
+if(!$user->check_capability($user->_data['user_group'], 'control_panel_setting')){
+  modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
 }
 
-// check moderator mode
-if ($user->_is_moderator && !$moderator_mode) {
+// check admin|moderator permission
+if(!$user->check_capability($user->_data['user_group'], 'control_panel_setting')){
+  modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
+} elseif ($user->_is_moderator && !$moderator_mode) {
   /* moderator try to access admin panel */
   _error(__('System Message'), __("You don't have the right permission to access this"));
 }
+
+
 
 try {
 
@@ -100,9 +104,10 @@ try {
 
     case 'settings':
       // check admin|moderator permission
-      if ($user->_is_moderator) {
-        _error(__('System Message'), __("You don't have the right permission to access this"));
+      if(!$user->check_capability($user->_data['user_group'], 'control_panel_setting')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
       }
+
 
       // get nested view content
       switch ($_GET['sub_view']) {
@@ -195,9 +200,10 @@ try {
 
     case 'themes':
       // check admin|moderator permission
-      if ($user->_is_moderator) {
-        _error(__('System Message'), __("You don't have the right permission to access this"));
+      if(!$user->check_capability($user->_data['user_group'], 'change_logo')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
       }
+
 
       // get nested view content
       switch ($_GET['sub_view']) {
@@ -250,18 +256,19 @@ try {
 
     case 'design':
       // check admin|moderator permission
-      if ($user->_is_moderator) {
-        _error(__('System Message'), __("You don't have the right permission to access this"));
+      // check admin|moderator permission
+      if(!$user->check_capability($user->_data['user_group'], 'change_logo')){
+      modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
       }
-
+      
       // page header
       page_header($control_panel['title'] . " &rsaquo; " . __("Design"));
       break;
 
     case 'languages':
       // check admin|moderator permission
-      if ($user->_is_moderator) {
-        _error(__('System Message'), __("You don't have the right permission to access this"));
+      if(!$user->check_capability($user->_data['user_group'], 'control_panel_setting')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
       }
 
       // get nested view content
@@ -315,10 +322,11 @@ try {
       break;
 
     case 'countries':
-      // check admin|moderator permission
-      if ($user->_is_moderator) {
-        _error(__('System Message'), __("You don't have the right permission to access this"));
+            // check admin|moderator permission
+      if(!$user->check_capability($user->_data['user_group'], 'control_panel_setting')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
       }
+
 
       // get nested view content
       switch ($_GET['sub_view']) {
@@ -371,8 +379,8 @@ try {
 
     case 'currencies':
       // check admin|moderator permission
-      if ($user->_is_moderator) {
-        _error(__('System Message'), __("You don't have the right permission to access this"));
+      if(!$user->check_capability($user->_data['user_group'], 'control_panel_setting')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
       }
 
       // get nested view content
@@ -421,9 +429,10 @@ try {
 
     case 'genders':
       // check admin|moderator permission
-      if ($user->_is_moderator) {
-        _error(__('System Message'), __("You don't have the right permission to access this"));
+      if(!$user->check_capability($user->_data['user_group'], 'control_panel_setting')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
       }
+      
 
       // get nested view content
       switch ($_GET['sub_view']) {
@@ -471,8 +480,8 @@ try {
 
     case 'users':
       // check admin|moderator permission
-      if ($user->_is_moderator) {
-        _error(__('System Message'), __("You don't have the right permission to access this"));
+      if(!$user->check_capability($user->_data['user_group'], 'manage_user')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
       }
 
       // get nested view content
@@ -2055,10 +2064,11 @@ try {
       }
       break;
     case 'ads':
-      // check admin|moderator permission
-      if ($user->_is_moderator) {
-        _error(__('System Message'), __("You don't have the right permission to access this"));
+            // check admin|moderator permission
+      if(!$user->check_capability($user->_data['user_group'], 'add_jobs')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
       }
+
 
       // get nested view content
       switch ($_GET['sub_view']) {
@@ -2137,8 +2147,8 @@ try {
 
     case 'wallet':
       // check admin|moderator permission
-      if ($user->_is_moderator) {
-        _error(__('System Message'), __("You don't have the right permission to access this"));
+      if(!$user->check_capability($user->_data['user_group'], 'control_panel_setting')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
       }
 
       // get nested view content
@@ -2349,8 +2359,8 @@ try {
 
     case 'affiliates':
       // check admin|moderator permission
-      if ($user->_is_moderator) {
-        _error(__('System Message'), __("You don't have the right permission to access this"));
+      if(!$user->check_capability($user->_data['user_group'], 'control_panel_setting')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
       }
 
       // get nested view content
@@ -2403,9 +2413,10 @@ try {
 
     case 'points':
       // check admin|moderator permission
-      if ($user->_is_moderator) {
-        _error(__('System Message'), __("You don't have the right permission to access this"));
+      if(!$user->check_capability($user->_data['user_group'], 'control_panel_setting')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
       }
+
 
       // get nested view content
       switch ($_GET['sub_view']) {
@@ -2457,8 +2468,8 @@ try {
 
     case 'funding':
       // check admin|moderator permission
-      if ($user->_is_moderator) {
-        _error(__('System Message'), __("You don't have the right permission to access this"));
+      if(!$user->check_capability($user->_data['user_group'], 'control_panel_setting')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
       }
 
       // get nested view content
@@ -2567,8 +2578,8 @@ try {
 
     case 'monetization':
       // check admin|moderator permission
-      if ($user->_is_moderator) {
-        _error(__('System Message'), __("You don't have the right permission to access this"));
+      if(!$user->check_capability($user->_data['user_group'], 'control_panel_setting')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
       }
 
       // get nested view content
@@ -2621,8 +2632,8 @@ try {
 
     case 'coinpayments':
       // check admin|moderator permission
-      if ($user->_is_moderator) {
-        _error(__('System Message'), __("You don't have the right permission to access this"));
+      if(!$user->check_capability($user->_data['user_group'], 'manage_user')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
       }
 
       // page header
@@ -2637,9 +2648,10 @@ try {
 
     case 'bank':
       // check admin|moderator permission
-      if ($user->_is_moderator) {
-        _error(__('System Message'), __("You don't have the right permission to access this"));
+      if(!$user->check_capability($user->_data['user_group'], 'control_panel_setting')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
       }
+
 
       // page header
       page_header($control_panel['title'] . " &rsaquo; " . __("Bank Receipts"));
@@ -2659,8 +2671,8 @@ try {
 
     case 'developers':
       // check admin|moderator permission
-      if ($user->_is_moderator) {
-        _error(__('System Message'), __("You don't have the right permission to access this"));
+      if(!$user->check_capability($user->_data['user_group'], 'control_panel_setting')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
       }
 
       // get nested view content
@@ -2972,10 +2984,11 @@ try {
       break;
 
     case 'tools':
-      // check admin|moderator permission
-      if ($user->_is_moderator) {
-        _error(__('System Message'), __("You don't have the right permission to access this"));
+            // check admin|moderator permission
+      if(!$user->check_capability($user->_data['user_group'], 'control_panel_setting')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
       }
+
 
       // get nested view content
       switch ($_GET['sub_view']) {
@@ -3068,8 +3081,8 @@ try {
 
     case 'custom_fields':
       // check admin|moderator permission
-      if ($user->_is_moderator) {
-        _error(__('System Message'), __("You don't have the right permission to access this"));
+      if(!$user->check_capability($user->_data['user_group'], 'control_panel_setting')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
       }
 
       // get nested view content
@@ -3122,10 +3135,11 @@ try {
       break;
 
     case 'static':
-      // check admin|moderator permission
-      if ($user->_is_moderator) {
-        _error(__('System Message'), __("You don't have the right permission to access this"));
-      }
+              // check admin|moderator permission
+        if(!$user->check_capability($user->_data['user_group'], 'control_panel_setting')){
+          modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
+        }
+
 
       // get nested view content
       switch ($_GET['sub_view']) {
@@ -3178,8 +3192,8 @@ try {
 
     case 'colored_posts':
       // check admin|moderator permission
-      if ($user->_is_moderator) {
-        _error(__('System Message'), __("You don't have the right permission to access this"));
+      if(!$user->check_capability($user->_data['user_group'], 'control_panel_setting')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
       }
 
       // get nested view content
@@ -3228,9 +3242,10 @@ try {
 
     case 'widgets':
       // check admin|moderator permission
-      if ($user->_is_moderator) {
-        _error(__('System Message'), __("You don't have the right permission to access this"));
-      }
+if(!$user->check_capability($user->_data['user_group'], 'control_panel_setting')){
+  modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
+}
+
 
       // get nested view content
       switch ($_GET['sub_view']) {
@@ -3328,8 +3343,8 @@ try {
 
     case 'emojis':
       // check admin|moderator permission
-      if ($user->_is_moderator) {
-        _error(__('System Message'), __("You don't have the right permission to access this"));
+      if(!$user->check_capability($user->_data['user_group'], 'add_comment')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
       }
 
       // get nested view content
@@ -3378,9 +3393,9 @@ try {
 
     case 'stickers':
       // check admin|moderator permission
-      if ($user->_is_moderator) {
-        _error(__('System Message'), __("You don't have the right permission to access this"));
-      }
+if(!$user->check_capability($user->_data['user_group'], 'control_panel_setting')){
+  modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
+}
 
       // get nested view content
       switch ($_GET['sub_view']) {
@@ -3428,8 +3443,8 @@ try {
 
     case 'gifts':
       // check admin|moderator permission
-      if ($user->_is_moderator) {
-        _error(__('System Message'), __("You don't have the right permission to access this"));
+      if(!$user->check_capability($user->_data['user_group'], 'add_comment')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
       }
 
       // get nested view content
@@ -3477,10 +3492,11 @@ try {
       break;
 
     case 'announcements':
-      // check admin|moderator permission
-      if ($user->_is_moderator) {
-        _error(__('System Message'), __("You don't have the right permission to access this"));
+       // check admin|moderator permission
+       if(!$user->check_capability($user->_data['user_group'], 'control_panel_setting')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
       }
+
 
       // get nested view content
       switch ($_GET['sub_view']) {
@@ -3533,8 +3549,8 @@ try {
 
     case 'notifications':
       // check admin|moderator permission
-      if ($user->_is_moderator) {
-        _error(__('System Message'), __("You don't have the right permission to access this"));
+      if(!$user->check_capability($user->_data['user_group'], 'control_panel_setting')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
       }
 
       // page header
@@ -3543,8 +3559,8 @@ try {
 
     case 'newsletter':
       // check admin|moderator permission
-      if ($user->_is_moderator) {
-        _error(__('System Message'), __("You don't have the right permission to access this"));
+      if(!$user->check_capability($user->_data['user_group'], 'view_article')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
       }
 
       // page header
@@ -3585,8 +3601,8 @@ try {
 
     case 'changelog':
       // check admin|moderator permission
-      if ($user->_is_moderator) {
-        _error(__('System Message'), __("You don't have the right permission to access this"));
+      if(!$user->check_capability($user->_data['user_group'], 'view_article')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
       }
 
       // page header
@@ -3595,8 +3611,8 @@ try {
 
     default:
       // check admin|moderator permission
-      if (!$user->_is_admin || !$user->_is_moderator) {
-        _error(__('System Message'), __("You don't have the right permission to access this"));
+      if(!$user->check_capability($user->_data['user_group'], 'view_article')){
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
       }
       _error(404);
   }
@@ -3606,7 +3622,7 @@ try {
   $smarty->assign('control_panel', $control_panel);
 
   // global insights
-  if ($user->_is_admin) {
+  if($user->check_capability($user->_data['user_group'], 'control_panel_setting')) {
     /* wallet payments insights */
     $get_wallet_payments = $db->query("SELECT COUNT(*) as count FROM wallet_payments WHERE status = '0'") or _error("SQL_ERROR");
     $wallet_payments_insights = $get_wallet_payments->fetch_assoc()['count'];

@@ -206,11 +206,11 @@ try {
         }
 
         // check file size
-        if (!$user->_is_admin && !$user->_is_moderator) {
-          if ($_FILES["file"]["size"] > $max_allowed_size) {
-            modal("ERROR", __("Upload Error"), __("The file size is so big") . ", " . __("The allowed file size is:") . " " . ($max_allowed_size / 1024 / 1024) . __("MB"));
-          }
+      if(!$user->check_capability($user->_data['user_group'], 'control_panel_setting')){
+        if ($_FILES["file"]["size"] > $max_allowed_size) {
+          modal("ERROR", __("Upload Error"), __("The file size is so big") . ", " . __("The allowed file size is:") . " " . ($max_allowed_size / 1024 / 1024) . __("MB"));
         }
+      }
 
         // init image & prepare image name & path
         $image = new Image($_FILES["file"]["tmp_name"]);
@@ -651,11 +651,11 @@ try {
         }
 
         // check file size
-        if (!$user->_is_admin && !$user->_is_moderator) {
-          if ($_FILES["file"]["size"] > $max_allowed_size) {
-            modal("ERROR", __("Upload Error"), __("The file size is so big") . ", " . __("The allowed file size is:") . " " . ($max_allowed_size / 1024 / 1024) . __("MB"));
-          }
+      if(!$user->check_capability($user->_data['user_group'], 'control_panel_setting')){
+        if ($_FILES["file"]["size"] > $max_allowed_size) {
+          modal("ERROR", __("Upload Error"), __("The file size is so big") . ", " . __("The allowed file size is:") . " " . ($max_allowed_size / 1024 / 1024) . __("MB"));
         }
+      }
 
         // check file extesnion
         $extension = get_extension($_FILES['file']['name']);
@@ -729,7 +729,7 @@ try {
       }
 
       // check file size
-      if (!$user->_is_admin && !$user->_is_moderator) {
+      if(!$user->check_capability($user->_data['user_group'], 'control_panel_setting')){
         if ($_FILES["file"]["size"] > $max_allowed_size) {
           modal("ERROR", __("Upload Error"), __("The file size is so big") . ", " . __("The allowed file size is:") . " " . ($max_allowed_size / 1024 / 1024) . __("MB"));
         }
@@ -806,11 +806,12 @@ try {
       }
 
       // check file size
-      if (!$user->_is_admin && !$user->_is_moderator) {
+      if(!$user->check_capability($user->_data['user_group'], 'add_comment')){
         if ($_FILES["file"]["size"] > $max_allowed_size) {
           modal("ERROR", __("Upload Error"), __("The file size is so big") . ", " . __("The allowed file size is:") . " " . ($max_allowed_size / 1024 / 1024) . __("MB"));
         }
       }
+      
 
       // check file extesnion
       $extension = get_extension($_FILES['file']['name']);

@@ -112,6 +112,17 @@
               </div>
               <div class="row">
                 <div class="col col-lg-3">
+                  <label class="switch" for="edit_article">
+                    <input type="checkbox" name="edit_article" value="0" id="edit_article"  {if $data['edit_article']==1}checked{/if}>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                <div class="col col-lg-9">
+                  <div class="form-control-label h6">{__("Edit Article")}</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-lg-3">
                   <label class="switch" for="share_post">
                     <input type="checkbox" name="share_post" id="share_post" {if $data['share_post']==1}checked{/if}>
                     <span class="slider round"></span>
@@ -123,13 +134,68 @@
               </div>
               <div class="row">
                 <div class="col col-lg-3">
-                  <label class="switch" for="comments">
-                    <input type="checkbox" name="comments" id="comments" {if $data['comments']==1}checked{/if}>
+                  <label class="switch" for="view_article">
+                    <input type="checkbox" name="view_article" id="view_article" {if $data['view_article']==1}checked{/if}>
                     <span class="slider round"></span>
                   </label>
                 </div>
                 <div class="col col-lg-9">
-                  <div class="form-control-label h6">{__("Comments")}</div>
+                  <div class="form-control-label h6">{__("View Article")}</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-lg-3">
+                  <label class="switch" for="delete_article">
+                    <input type="checkbox" name="delete_article" id="delete_article" {if $data['delete_article']==1}checked{/if}>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                <div class="col col-lg-9">
+                  <div class="form-control-label h6">{__("Delete Article")}</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-lg-3">
+                  <label class="switch" for="approve_article">
+                    <input type="checkbox" name="approve_article" id="approve_article" {if $data['approve_article']==1}checked{/if}>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                <div class="col col-lg-9">
+                  <div class="form-control-label h6">{__("Approve Article")}</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-lg-3">
+                  <label class="switch" for="share_post">
+                    <input type="checkbox" name="share_post" id="share_post" {if $data['share_post']==1}checked{/if}>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                <div class="col col-lg-9">
+                  <div class="form-control-label h6">{__("Share Post")}</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-lg-3">
+                  <label class="switch" for="add_comment">
+                    <input type="checkbox" name="add_comment" id="add_comment" {if $data['add_comment']==1}checked{/if}>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                <div class="col col-lg-9">
+                  <div class="form-control-label h6">{__("Add Comments")}</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-lg-3">
+                  <label class="switch" for="edit_comment">
+                    <input type="checkbox" name="edit_comment" id="edit_comment" {if $data['edit_comment']==1}checked{/if}>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                <div class="col col-lg-9">
+                  <div class="form-control-label h6">{__("Edit Comments")}</div>
                 </div>
               </div>
               <div class="row">
@@ -168,7 +234,7 @@
               <div class="row">
                 <div class="col col-lg-3">
                   <label class="switch" for="manager_page">
-                    <input type="checkbox" name="manager_page" id="manager_page"  {if $data['manager_page']==1}checked{/if}>
+                    <input type="checkbox" name="manager_page" id="manager_page" {if $data['manager_page']==1}checked{/if}>
                     <span class="slider round"></span>
                   </label>
                 </div>
@@ -179,7 +245,7 @@
               <div class="row">
                 <div class="col col-lg-3">
                   <label class="switch" for="add_friend">
-                    <input type="checkbox" name="add_friend" id="add_friend"  {if $data['add_friend']==1}checked{/if}>
+                    <input type="checkbox" name="add_friend" id="add_friend" {if $data['add_friend']==1}checked{/if}>
                     <span class="slider round"></span>
                   </label>
                 </div>
@@ -190,12 +256,12 @@
               <div class="row">
                 <div class="col col-lg-3">
                   <label class="switch" for="follow_page" style="height:30px">
-                    <input type="checkbox" name="follow_page" id="follow_page"  {if $data['follow_page']==1}checked{/if}>
+                    <input type="checkbox" name="follow_page" id="follow_page" {if $data['follow_page']==1}checked{/if}>
                     <span class="slider round"></span>
                   </label>
                 </div>
                 <div class="col col-lg-9">
-                  <div class="form-control-label h6">{__("Follow Page")}</div>
+                  <div class="form-control-label h6">{__("Follow Pages")}</div>
                 </div>
               </div>
             </div>
@@ -203,7 +269,7 @@
               <div class="row">
                 <div class="col col-lg-3">
                   <label class="switch" for="follow_writer">
-                    <input type="checkbox" name="follow_writer" id="follow_writer"  {if $data['follow_writer']==1}checked{/if}>
+                    <input type="checkbox" name="follow_writer" id="follow_writer" {if $data['follow_writer']==1}checked{/if}>
                     <span class="slider round"></span>
                   </label>
                 </div>
@@ -214,7 +280,7 @@
               <div class="row">
                 <div class="col col-lg-3">
                   <label class="switch" for="manage_user">
-                    <input type="checkbox" name="manage_user" id="manage_user"  {if $data['manage_user']==1}checked{/if}>
+                    <input type="checkbox" name="manage_user" id="manage_user" {if $data['manage_user']==1}checked{/if}>
                     <span class="slider round"></span>
                   </label>
                 </div>
@@ -225,56 +291,23 @@
               <div class="row">
                 <div class="col col-lg-3">
                   <label class="switch" for="create_user_group">
-                    <input type="checkbox" name="create_user_group" id="create_user_group"  {if $data['create_user_group']==1}checked{/if}>
+                    <input type="checkbox" name="create_user_group" id="create_user_group" {if $data['create_user_group']==1}checked{/if}>
                     <span class="slider round"></span>
                   </label>
                 </div>
                 <div class="col col-lg-9">
-                  <div class="form-control-label h6">{__("Cretea User Group")}</div>
+                  <div class="form-control-label h6">{__("Crete User Group")}</div>
                 </div>
               </div>
               <div class="row">
                 <div class="col col-lg-3">
                   <label class="switch" for="change_logo">
-                    <input type="checkbox" name="change_logo" id="change_logo"  {if $data['change_logo']==1}checked{/if}>
+                    <input type="checkbox" name="change_logo" id="change_logo" {if $data['change_logo']==1}checked{/if}>
                     <span class="slider round"></span>
                   </label>
                 </div>
                 <div class="col col-lg-9">
                   <div class="form-control-label h6">{__("Change Logo")}</div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col col-lg-3">
-                  <label class="switch" for="approves_category">
-                    <input type="checkbox" name="approves_category" id="approves_category"  {if $data['approves_category']==1}checked{/if}>
-                    <span class="slider round"></span>
-                  </label>
-                </div>
-                <div class="col col-lg-9">
-                  <div class="form-control-label h6">{__("Approves Categories")}</div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col col-lg-3">
-                  <label class="switch" for="approves_type">
-                    <input type="checkbox" name="approves_type" id="approves_type" {if $data['approves_type']==1}checked{/if}>
-                    <span class="slider round"></span>
-                  </label>
-                </div>
-                <div class="col col-lg-9">
-                  <div class="form-control-label h6">{__("Approves Types")}</div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col col-lg-3">
-                  <label class="switch" for="approves_ads">
-                    <input type="checkbox" name="approves_ads" id="approves_ads"  {if $data['approves_ads']==1}checked{/if}>
-                    <span class="slider round"></span>
-                  </label>
-                </div>
-                <div class="col col-lg-9">
-                  <div class="form-control-label h6">{__("Approves Ads")}</div>
                 </div>
               </div>
               <div class="row">
@@ -290,15 +323,92 @@
               </div>
               <div class="row">
                 <div class="col col-lg-3">
+                  <label class="switch" for="approves_type">
+                    <input type="checkbox" name="approves_type" id="approves_type" {if $data['approves_type']==1}checked{/if}>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                <div class="col col-lg-9">
+                  <div class="form-control-label h6">{__("Approves Types")}</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-lg-3">
+                  <label class="switch" for="add_jobs">
+                    <input type="checkbox" name="add_jobs" id="add_jobs" {if $data['add_jobs']==1}checked{/if}>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                <div class="col col-lg-9">
+                  <div class="form-control-label h6">{__("Add Jobs")}</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-lg-3">
                   <label class="switch" for="manage_support">
                     <input type="checkbox" name="manage_support" id="manage_support" {if $data['manage_support']==1}checked{/if}>
                     <span class="slider round"></span>
                   </label>
                 </div>
                 <div class="col col-lg-9">
-                  <div class="form-control-label h6">{__("Manage Support")}</div>
+                  <div class="form-control-label h6">{__("Manage Supprt")}</div>
+                </div>
+              </div> 
+              <div class="row">
+                <div class="col col-lg-3">
+                  <label class="switch" for="approves_category">
+                    <input type="checkbox" name="approves_category" id="approves_category" {if $data['approves_category']==1}checked{/if}>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                <div class="col col-lg-9">
+                  <div class="form-control-label h6">{__("Approves Categories")}</div>
                 </div>
               </div>
+              <div class="row">
+                <div class="col col-lg-3">
+                  <label class="switch" for="disable_social_media">
+                    <input type="checkbox" name="disable_social_media" id="disable_social_media" {if $data['disable_social_media']==1}checked{/if}>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                <div class="col col-lg-9">
+                  <div class="form-control-label h6">{__("Disable Social Media")}</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-lg-3">
+                  <label class="switch" for="manage_reported_content">
+                    <input type="checkbox" name="manage_reported_content" id="manage_reported_content" {if $data['manage_reported_content']==1}checked{/if}>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                <div class="col col-lg-9">
+                  <div class="form-control-label h6">{__("Manage Reported Content")}</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-lg-3">
+                  <label class="switch" for="invite_researchers">
+                    <input type="checkbox" name="invite_researchers" id="invite_researchers" {if $data['invite_researchers']==1}checked{/if}>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                <div class="col col-lg-9">
+                  <div class="form-control-label h6">{__("Invite Researchers")}</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-lg-3">
+                  <label class="switch" for="can_add_tags">
+                    <input type="checkbox" name="can_add_tags" id="can_add_tags" {if $data['can_add_tags']==1}checked{/if}>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                <div class="col col-lg-9">
+                  <div class="form-control-label h6">{__("Can Add Tags")}</div>
+                </div>
+              </div>              
               
             </div>
           </div>
@@ -387,6 +497,39 @@
               </div>
               <div class="row">
                 <div class="col col-lg-3">
+                  <label class="switch" for="view_article">
+                    <input type="checkbox" name="view_article" id="view_article" checked>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                <div class="col col-lg-9">
+                  <div class="form-control-label h6">{__("View Article")}</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-lg-3">
+                  <label class="switch" for="delete_article">
+                    <input type="checkbox" name="delete_article" id="delete_article" checked>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                <div class="col col-lg-9">
+                  <div class="form-control-label h6">{__("Delete Article")}</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-lg-3">
+                  <label class="switch" for="approve_article">
+                    <input type="checkbox" name="approve_article" id="approve_article" checked>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                <div class="col col-lg-9">
+                  <div class="form-control-label h6">{__("Approve Article")}</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-lg-3">
                   <label class="switch" for="share_post">
                     <input type="checkbox" name="share_post" id="share_post" checked>
                     <span class="slider round"></span>
@@ -398,13 +541,24 @@
               </div>
               <div class="row">
                 <div class="col col-lg-3">
-                  <label class="switch" for="comments">
-                    <input type="checkbox" name="comments" id="comments" checked>
+                  <label class="switch" for="add_comment">
+                    <input type="checkbox" name="add_comment" id="add_comment" checked>
                     <span class="slider round"></span>
                   </label>
                 </div>
                 <div class="col col-lg-9">
-                  <div class="form-control-label h6">{__("Comments")}</div>
+                  <div class="form-control-label h6">{__("Add Comments")}</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-lg-3">
+                  <label class="switch" for="edit_comment">
+                    <input type="checkbox" name="edit_comment" id="edit_comment" checked>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                <div class="col col-lg-9">
+                  <div class="form-control-label h6">{__("Edit Comments")}</div>
                 </div>
               </div>
               <div class="row">
@@ -521,13 +675,13 @@
               </div>
               <div class="row">
                 <div class="col col-lg-3">
-                  <label class="switch" for="approves_category">
-                    <input type="checkbox" name="approves_category" id="approves_category" checked>
+                  <label class="switch" for="control_panel_Setting">
+                    <input type="checkbox" name="control_panel_Setting" id="control_panel_Setting" checked>
                     <span class="slider round"></span>
                   </label>
                 </div>
                 <div class="col col-lg-9">
-                  <div class="form-control-label h6">{__("Approves Categories")}</div>
+                  <div class="form-control-label h6">{__("Control Panel Setting")}</div>
                 </div>
               </div>
               <div class="row">
@@ -543,13 +697,13 @@
               </div>
               <div class="row">
                 <div class="col col-lg-3">
-                  <label class="switch" for="approves_ads">
-                    <input type="checkbox" name="approves_ads" id="approves_ads" checked>
+                  <label class="switch" for="add_jobs">
+                    <input type="checkbox" name="add_jobs" id="add_jobs" checked>
                     <span class="slider round"></span>
                   </label>
                 </div>
                 <div class="col col-lg-9">
-                  <div class="form-control-label h6">{__("Approves Ads")}</div>
+                  <div class="form-control-label h6">{__("Add Jobs")}</div>
                 </div>
               </div>
               <div class="row">
@@ -562,18 +716,64 @@
                 <div class="col col-lg-9">
                   <div class="form-control-label h6">{__("Manage Supprt")}</div>
                 </div>
-              </div>              
+              </div> 
               <div class="row">
                 <div class="col col-lg-3">
-                  <label class="switch" for="control_panel_Setting">
-                    <input type="checkbox" name="control_panel_Setting" id="control_panel_Setting" checked>
+                  <label class="switch" for="approves_category">
+                    <input type="checkbox" name="approves_category" id="approves_category" checked>
                     <span class="slider round"></span>
                   </label>
                 </div>
                 <div class="col col-lg-9">
-                  <div class="form-control-label h6">{__("Control Panel Setting")}</div>
+                  <div class="form-control-label h6">{__("Approves Categories")}</div>
                 </div>
               </div>
+              <div class="row">
+                <div class="col col-lg-3">
+                  <label class="switch" for="disable_social_media">
+                    <input type="checkbox" name="disable_social_media" id="disable_social_media" checked>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                <div class="col col-lg-9">
+                  <div class="form-control-label h6">{__("Disable Social Media")}</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-lg-3">
+                  <label class="switch" for="manage_reported_content">
+                    <input type="checkbox" name="manage_reported_content" id="manage_reported_content" checked>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                <div class="col col-lg-9">
+                  <div class="form-control-label h6">{__("Manage Reported Content")}</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-lg-3">
+                  <label class="switch" for="invite_researchers">
+                    <input type="checkbox" name="invite_researchers" id="invite_researchers" checked>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                <div class="col col-lg-9">
+                  <div class="form-control-label h6">{__("Invite Researchers")}</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-lg-3">
+                  <label class="switch" for="can_add_tags">
+                    <input type="checkbox" name="can_add_tags" id="can_add_tags" checked>
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                <div class="col col-lg-9">
+                  <div class="form-control-label h6">{__("Can Add Tags")}</div>
+                </div>
+              </div>
+                           
+              
             </div>
           </div>
         </div>
