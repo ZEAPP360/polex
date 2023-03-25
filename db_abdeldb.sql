@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 21, 2023 at 05:30 AM
+-- Generation Time: Mar 25, 2023 at 06:35 AM
 -- Server version: 8.0.30
--- PHP Version: 8.1.10
+-- PHP Version: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -2491,6 +2491,13 @@ CREATE TABLE `games` (
   `thumbnail` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
 
+--
+-- Dumping data for table `games`
+--
+
+INSERT INTO `games` (`game_id`, `title`, `description`, `source`, `thumbnail`) VALUES
+(1, 'AAA', 'asdasdd dsadccccccc\r\nd XCXC cDSAdSDSd\r\neweeeee\r\n8888', 'sad sadsad', '');
+
 -- --------------------------------------------------------
 
 --
@@ -3307,16 +3314,16 @@ INSERT INTO `posts` (`post_id`, `user_id`, `user_type`, `in_group`, `group_id`, 
 (15, 1, 'user', '0', NULL, '1', '0', NULL, '1', '0', NULL, 'article', NULL, NULL, '2023-01-16 06:44:39', NULL, 'public', NULL, NULL, NULL, '0', NULL, '0', '0', '0', 1, 0, 0, 0, 0, 0, 0, 0, 0, 366, '0', '0'),
 (16, 1, 'page', '0', NULL, '1', '0', NULL, '1', '0', NULL, 'article', NULL, NULL, '2023-01-16 06:48:34', NULL, 'public', NULL, NULL, NULL, '0', NULL, '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 387, '0', '0'),
 (20, 3, 'user', '0', 0, '0', '0', 0, '0', '0', 0, '', 0, NULL, '2023-01-16 16:07:59', '', 'public', 'سلام', '', '', '0', NULL, '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 427, '0', '0'),
-(21, 1, 'user', '0', 0, '0', '0', 0, '0', '0', 0, 'media', 0, NULL, '2023-01-19 23:43:05', '', 'public', 'شاهد ميسي ورونالدو', '', '', '0', NULL, '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 519, '0', '0'),
-(23, 1, 'user', '0', 0, '0', '0', 0, '0', '0', 0, 'link', 0, NULL, '2023-01-19 23:44:44', '', 'public', '', '', '', '0', NULL, '1', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 517, '0', '0'),
-(24, 75, 'user', '0', 0, '0', '0', 0, '0', '0', 0, 'link', 0, NULL, '2023-01-19 23:45:25', '', 'public', 'https://alarab.news/%D8%B9%D9%8A%D9%88%D8%A8-%D9%81%D9%8A-%D8%A7%D8%AA%D9%81%D8%A7%D9%82-%D8%AA%D8%A8%D8%A7%D8%AF%D9%84-%D8%A7%D9%84%D8%A3%D8%B3%D8%B1%D9%89-%D8%AA%D9%82%D9%84%D9%84-%D8%A3%D8%AB%D8%B1%D9%87-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85-%D9%81%D9%8A-%D8%A7%D9%84%D9%8A%D9%85%D9%86', '', '', '0', NULL, '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 504, '0', '0'),
-(25, 75, 'user', '0', 0, '0', '0', 0, '0', '0', 0, 'link', 0, NULL, '2023-01-19 23:46:02', '', 'public', 'https://alarab.news/%D8%B9%D9%8A%D9%88%D8%A8-%D9%81%D9%8A-%D8%A7%D8%AA%D9%81%D8%A7%D9%82-%D8%AA%D8%A8%D8%A7%D8%AF%D9%84-%D8%A7%D9%84%D8%A3%D8%B3%D8%B1%D9%89-%D8%AA%D9%82%D9%84%D9%84-%D8%A3%D8%AB%D8%B1%D9%87-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85-%D9%81%D9%8A-%D8%A7%D9%84%D9%8A%D9%85%D9%86', '', '', '0', NULL, '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 501, '0', '0'),
-(26, 75, 'user', '0', NULL, '1', '0', NULL, '1', '0', NULL, 'article', NULL, NULL, '2023-01-20 23:03:01', NULL, 'public', NULL, NULL, NULL, '0', NULL, '1', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 511, '0', '0'),
-(27, 75, 'user', '0', 0, '0', '0', 0, '0', '0', 0, 'link', 0, NULL, '2023-01-24 23:19:03', '', 'public', 'https://rasanah-iiis.org/%d9%85%d8%b1%d9%83%d8%b2-%d8%a7%d9%84%d8%af%d8%b1%d8%a7%d8%b3%d8%a7%d8%aa-%d9%88-%d8%a7%d9%84%d8%a8%d8%ad%d9%88%d8%ab/%d8%ad%d8%b1%d8%a8-%d8%a7%d9%84%d9%85%d8%b9%d9%84%d9%88%d9%85%d8%a7%d8%aa-%d9%81%d9%8a-%d8%a7%d9%84%d8%a3%d8%b2%d9%85%d8%a9-%d8%a7%d9%84%d8%a3%d9%88%d9%83%d8%b1%d8%a7%d9%86%d9%8a%d8%a9/', '', '', '0', NULL, '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 416, '0', '0'),
-(28, 1, 'page', '0', NULL, '1', '0', NULL, '1', '0', NULL, 'page_picture', NULL, NULL, '2023-01-26 13:25:49', NULL, 'public', NULL, NULL, NULL, '0', NULL, '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 362, '0', '0'),
-(29, 1, 'page', '0', NULL, '1', '0', NULL, '1', '0', NULL, 'page_cover', NULL, NULL, '2023-01-26 13:26:04', NULL, 'public', NULL, NULL, NULL, '0', NULL, '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 361, '0', '0'),
-(30, 2, 'page', '0', NULL, '1', '0', NULL, '1', '0', NULL, 'page_picture', NULL, NULL, '2023-01-26 13:26:59', NULL, 'public', NULL, NULL, NULL, '0', NULL, '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 1, 0, 352, '0', '0'),
-(31, 1, 'user', '0', 0, '0', '0', 0, '0', '0', 0, '', 0, NULL, '2023-02-28 02:41:58', '', 'public', 'how are you ', '', '', '0', NULL, '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 79, '0', '0');
+(21, 1, 'user', '0', 0, '0', '0', 0, '0', '0', 0, 'media', 0, NULL, '2023-01-19 23:43:05', '', 'public', 'شاهد ميسي ورونالدو', '', '', '0', NULL, '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 537, '0', '0'),
+(23, 1, 'user', '0', 0, '0', '0', 0, '0', '0', 0, 'link', 0, NULL, '2023-01-19 23:44:44', '', 'public', '', '', '', '0', NULL, '1', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 535, '0', '0'),
+(24, 75, 'user', '0', 0, '0', '0', 0, '0', '0', 0, 'link', 0, NULL, '2023-01-19 23:45:25', '', 'public', 'https://alarab.news/%D8%B9%D9%8A%D9%88%D8%A8-%D9%81%D9%8A-%D8%A7%D8%AA%D9%81%D8%A7%D9%82-%D8%AA%D8%A8%D8%A7%D8%AF%D9%84-%D8%A7%D9%84%D8%A3%D8%B3%D8%B1%D9%89-%D8%AA%D9%82%D9%84%D9%84-%D8%A3%D8%AB%D8%B1%D9%87-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85-%D9%81%D9%8A-%D8%A7%D9%84%D9%8A%D9%85%D9%86', '', '', '0', NULL, '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 522, '0', '0'),
+(25, 75, 'user', '0', 0, '0', '0', 0, '0', '0', 0, 'link', 0, NULL, '2023-01-19 23:46:02', '', 'public', 'https://alarab.news/%D8%B9%D9%8A%D9%88%D8%A8-%D9%81%D9%8A-%D8%A7%D8%AA%D9%81%D8%A7%D9%82-%D8%AA%D8%A8%D8%A7%D8%AF%D9%84-%D8%A7%D9%84%D8%A3%D8%B3%D8%B1%D9%89-%D8%AA%D9%82%D9%84%D9%84-%D8%A3%D8%AB%D8%B1%D9%87-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85-%D9%81%D9%8A-%D8%A7%D9%84%D9%8A%D9%85%D9%86', '', '', '0', NULL, '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 519, '0', '0'),
+(26, 75, 'user', '0', NULL, '1', '0', NULL, '1', '0', NULL, 'article', NULL, NULL, '2023-01-20 23:03:01', NULL, 'public', NULL, NULL, NULL, '0', NULL, '1', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 529, '0', '0'),
+(27, 75, 'user', '0', 0, '0', '0', 0, '0', '0', 0, 'link', 0, NULL, '2023-01-24 23:19:03', '', 'public', 'https://rasanah-iiis.org/%d9%85%d8%b1%d9%83%d8%b2-%d8%a7%d9%84%d8%af%d8%b1%d8%a7%d8%b3%d8%a7%d8%aa-%d9%88-%d8%a7%d9%84%d8%a8%d8%ad%d9%88%d8%ab/%d8%ad%d8%b1%d8%a8-%d8%a7%d9%84%d9%85%d8%b9%d9%84%d9%88%d9%85%d8%a7%d8%aa-%d9%81%d9%8a-%d8%a7%d9%84%d8%a3%d8%b2%d9%85%d8%a9-%d8%a7%d9%84%d8%a3%d9%88%d9%83%d8%b1%d8%a7%d9%86%d9%8a%d8%a9/', '', '', '0', NULL, '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 434, '0', '0'),
+(28, 1, 'page', '0', NULL, '1', '0', NULL, '1', '0', NULL, 'page_picture', NULL, NULL, '2023-01-26 13:25:49', NULL, 'public', NULL, NULL, NULL, '0', NULL, '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 380, '0', '0'),
+(29, 1, 'page', '0', NULL, '1', '0', NULL, '1', '0', NULL, 'page_cover', NULL, NULL, '2023-01-26 13:26:04', NULL, 'public', NULL, NULL, NULL, '0', NULL, '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 379, '0', '0'),
+(30, 2, 'page', '0', NULL, '1', '0', NULL, '1', '0', NULL, 'page_picture', NULL, NULL, '2023-01-26 13:26:59', NULL, 'public', NULL, NULL, NULL, '0', NULL, '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 1, 0, 370, '0', '0'),
+(31, 1, 'user', '0', 0, '0', '0', 0, '0', '0', 0, '', 0, NULL, '2023-02-28 02:41:58', '', 'public', 'how are you ', '', '', '0', NULL, '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 97, '0', '0');
 
 -- --------------------------------------------------------
 
@@ -5052,7 +5059,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`user_id`, `user_group`, `user_demo`, `user_name`, `user_email`, `user_email_verified`, `user_email_verification_code`, `user_phone`, `user_phone_verified`, `user_phone_verification_code`, `user_password`, `user_two_factor_enabled`, `user_two_factor_type`, `user_two_factor_key`, `user_two_factor_gsecret`, `user_activated`, `user_reseted`, `user_reset_key`, `user_subscribed`, `user_package`, `user_subscription_date`, `user_boosted_posts`, `user_boosted_pages`, `user_started`, `user_verified`, `user_banned`, `user_banned_message`, `user_live_requests_counter`, `user_live_requests_lastid`, `user_live_messages_counter`, `user_live_messages_lastid`, `user_live_notifications_counter`, `user_live_notifications_lastid`, `user_latitude`, `user_longitude`, `user_location_updated`, `user_firstname`, `user_lastname`, `user_gender`, `user_picture`, `user_picture_id`, `user_cover`, `user_cover_id`, `user_cover_position`, `user_album_pictures`, `user_album_covers`, `user_album_timeline`, `user_pinned_post`, `user_registered`, `user_last_seen`, `user_first_failed_login`, `user_failed_login_ip`, `user_failed_login_count`, `user_country`, `user_birthdate`, `user_relationship`, `user_biography`, `user_website`, `user_work_title`, `user_work_place`, `user_work_url`, `user_current_city`, `user_hometown`, `user_edu_major`, `user_edu_school`, `user_edu_class`, `user_social_facebook`, `user_social_twitter`, `user_social_youtube`, `user_social_instagram`, `user_social_twitch`, `user_social_linkedin`, `user_social_vkontakte`, `user_profile_background`, `user_chat_enabled`, `user_privacy_newsletter`, `user_privacy_poke`, `user_privacy_gifts`, `user_privacy_wall`, `user_privacy_gender`, `user_privacy_birthdate`, `user_privacy_relationship`, `user_privacy_basic`, `user_privacy_work`, `user_privacy_location`, `user_privacy_education`, `user_privacy_other`, `user_privacy_friends`, `user_privacy_followers`, `user_privacy_photos`, `user_privacy_pages`, `user_privacy_groups`, `user_privacy_events`, `email_post_likes`, `email_post_comments`, `email_post_shares`, `email_wall_posts`, `email_mentions`, `email_profile_visits`, `email_friend_requests`, `facebook_connected`, `facebook_id`, `google_connected`, `google_id`, `twitter_connected`, `twitter_id`, `instagram_connected`, `instagram_id`, `linkedin_connected`, `linkedin_id`, `vkontakte_connected`, `vkontakte_id`, `user_referrer_id`, `points_earned`, `user_points`, `user_wallet_balance`, `user_affiliate_balance`, `user_funding_balance`, `user_monetization_enabled`, `user_monetization_price`, `user_monetization_balance`, `chat_sound`, `notifications_sound`, `onesignal_user_id`, `user_language`, `user_free_tried`, `coinbase_hash`, `coinbase_code`) VALUES
 (1, 1, '0', 'alahdal262', 'alahdal262@gmail.com', '1', NULL, NULL, '0', NULL, '$2y$10$ugIeDbKM9XjJO.BOlnhpDul6LKHpLfdhUJVF87wDTi4fPa4.yKayq', '0', NULL, NULL, 'YCTXPGURSAXBAZTI', '1', '0', NULL, '0', NULL, NULL, 0, 0, '1', '1', '0', NULL, 0, 0, 0, 4, 0, 0, '0', '0', NULL, 'alahdal262', NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-14 19:33:03', '2023-03-01 03:05:32', '2023-01-25 23:38:05', '85.255.237.84', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '1', 'public', 'public', 'friends', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', '1', '1', '1', '1', '1', '1', '1', '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, NULL, '0', 0, 0, 0, 0, '0', 0, 0, '1', '1', NULL, 'en_us', '0', NULL, NULL),
 (2, 3, '1', 'Shaima', 'shaima.abedo.1999@gmail.com', '0', NULL, NULL, '0', NULL, '$2y$10$iF2TISKPDpYSqw5UD1.Htet9rM85vrwcYZit/svEGkQzHZt4S./pW', '0', NULL, NULL, NULL, '1', '0', NULL, '0', NULL, NULL, 0, 0, '1', '0', '0', '', 0, 0, 0, 2, 0, 0, '0', '0', NULL, 'شيماء ', 'العباسي ', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-14 20:15:49', '2023-02-28 14:39:48', '2023-02-28 00:50:29', '115.97.88.227', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '1', 'public', 'public', 'friends', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', '1', '1', '1', '1', '1', '1', '1', '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, NULL, '0', 0, 0, 0, 0, '0', 0, 0, '1', '1', NULL, 'en_us', '0', NULL, NULL),
-(3, 1, '0', 'abdel', 'abdelalahdal@gmail.com', '1', NULL, NULL, '0', NULL, 'e73e3d6aed217a35ec45ddbb2a4263a7', '0', NULL, NULL, NULL, '1', '0', NULL, '0', NULL, NULL, 0, 0, '1', '1', '0', '', 1, 0, 0, 0, 9, 0, '0', '0', NULL, 'Abdel', 'Alahdal', 1, NULL, NULL, NULL, NULL, '0px', 1, 2, NULL, NULL, '2023-01-15 08:27:12', '2023-01-16 17:24:26', '2023-03-06 10:01:37', '127.0.0.1', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'photos/2023/01/Polex_68941761e47ecd9d9320ef6126b35499.jpg', '1', '1', 'public', 'public', 'friends', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', '1', '1', '1', '1', '1', '1', '1', '1', '6019704028051231', '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, NULL, '0', 0, 0, 0, 0, '0', 0, 0, '1', '1', NULL, 'ar_sa', '0', NULL, NULL),
+(3, 1, '0', 'abdel', 'abdelalahdal@gmail.com', '1', NULL, NULL, '0', NULL, 'e73e3d6aed217a35ec45ddbb2a4263a7', '0', NULL, NULL, NULL, '1', '0', NULL, '0', NULL, NULL, 0, 0, '1', '1', '0', '', 1, 0, 0, 0, 9, 0, '0', '0', NULL, 'Abdel', 'Alahdal', 1, NULL, NULL, NULL, NULL, '0px', 1, 2, NULL, NULL, '2023-01-15 08:27:12', '2023-01-16 17:24:26', '2023-03-23 07:23:13', '127.0.0.1', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'photos/2023/01/Polex_68941761e47ecd9d9320ef6126b35499.jpg', '1', '1', 'public', 'public', 'friends', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', '1', '1', '1', '1', '1', '1', '1', '1', '6019704028051231', '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, NULL, '0', 0, 0, 0, 0, '0', 0, 0, '1', '1', NULL, 'ar_sa', '0', NULL, NULL),
 (4, 3, '0', 'sama', 'maanee_mutaz_kPyH@polex.graphicweb.co.uk', '0', NULL, NULL, '0', NULL, '$2y$10$0Mt81vXSW/g9P3p9tcFMqO9GbcesSywk4iFGSbP01a0TYLmC5TpIm', '0', NULL, NULL, NULL, '1', '0', NULL, '0', NULL, NULL, 0, 0, '1', '0', '0', '', 0, 0, 0, 0, 4, 0, '0', '0', NULL, 'مصطفى', 'الشهيل', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-15 14:01:31', '2023-01-26 00:30:45', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '1', 'public', 'public', 'friends', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', '1', '1', '1', '1', '1', '1', '1', '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, NULL, '0', 0, 0, 0, 0, '0', 0, 0, '1', '1', NULL, 'ar_sa', '0', NULL, NULL),
 (5, 3, '0', 'abulebbeh_saleem_9lX4', 'abulebbeh_saleem_9lX4@polex.graphicweb.co.uk', '0', NULL, NULL, '0', NULL, '$2y$10$C0lEAzMkLAi..n078ime8.DQeFgi4n0/.1zWcx3vFH8lQVxn0cW/K', '0', NULL, NULL, NULL, '1', '0', NULL, '0', NULL, NULL, 0, 0, '0', '0', '0', NULL, 0, 0, 0, 0, 1, 0, '0', '0', NULL, 'لؤي', 'العرفج', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-15 14:01:31', '2023-01-15 14:01:31', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '1', 'public', 'public', 'friends', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', '1', '1', '1', '1', '1', '1', '1', '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, NULL, '0', 0, 0, 0, 0, '0', 0, 0, '1', '1', NULL, 'en_us', '0', NULL, NULL),
 (6, 3, '0', 'mqawasmee_Ny4O', 'mqawasmee_Ny4O@polex.graphicweb.co.uk', '0', NULL, NULL, '0', NULL, '$2y$10$cxFED8SsCaomGNBImoJuce78ze.1Fau/dd07GrviY/ZaYyz0jJSHC', '0', NULL, NULL, NULL, '1', '0', NULL, '0', NULL, NULL, 0, 0, '0', '0', '0', NULL, 0, 0, 0, 0, 0, 0, '0', '0', NULL, 'همام', 'العتيبي', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-15 14:01:31', '2023-01-15 14:01:31', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '1', 'public', 'public', 'friends', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', '1', '1', '1', '1', '1', '1', '1', '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, NULL, '0', 0, 0, 0, 0, '0', 0, 0, '1', '1', NULL, 'en_us', '0', NULL, NULL),
@@ -5131,7 +5138,7 @@ INSERT INTO `users` (`user_id`, `user_group`, `user_demo`, `user_name`, `user_em
 (78, 3, '0', 'alkdja', 'alkda@mgial.com', '0', '83f279213dffc6ebfd5fe860b285fca2', NULL, '0', NULL, '$2y$10$H/LdrtHBdCcEIiE2SJIO6O7Ywd7lpIv7DMHtj.wDe5ht5x0BQsuvm', '0', NULL, NULL, NULL, '0', '0', NULL, '0', NULL, NULL, 0, 0, '1', '0', '0', NULL, 0, 0, 0, 0, 0, 0, '0', '0', NULL, 'Salsd', 'Lada', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-26 12:12:00', '2023-01-26 12:23:35', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '1', 'public', 'public', 'friends', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', '1', '1', '1', '1', '1', '1', '1', '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, NULL, '0', 0, 0, 0, 0, '0', 0, 0, '1', '1', NULL, 'en_us', '0', NULL, NULL),
 (79, 3, '0', 'Saleh123456', 'saleh123456@gmail.com', '0', NULL, NULL, '0', NULL, '$2y$10$xLdL75coq2jqyIs2KRKiZOMLPwwnBtOqmGYbXCiJtjqDf9z982Iza', '0', NULL, NULL, NULL, '0', '0', NULL, '0', NULL, NULL, 0, 0, '1', '0', '0', NULL, 0, 0, 0, 0, 0, 0, '0', '0', NULL, 'صالح عبدالرحمن', 'صالح عبدالرحمن', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-01-28 00:13:11', '2023-01-28 01:06:55', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '0', 'public', 'public', 'friends', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', '1', '1', '1', '1', '1', '1', '1', '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, NULL, '0', 0, 0, 0, 0, '0', 0, 0, '1', '1', NULL, 'ar_sa', '0', NULL, NULL),
 (80, 3, '0', 'nada', 'nada@gmail.com', '1', 'd7ca7fa6755793064e9d5acb9e3cef7d', NULL, '0', NULL, '$2y$10$Vt73zvcwPRbMyrqYQmxdouBuh4EH3mDRCxQSxivOl5YINyD5XfI8u', '0', NULL, NULL, NULL, '1', '0', NULL, '0', NULL, NULL, 0, 0, '1', '1', '0', '', 0, 0, 0, 0, 0, 0, '0', '0', NULL, 'Nada', 'Nada', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-06 22:28:51', '2023-02-06 22:47:07', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '1', 'public', 'public', 'friends', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', '1', '1', '1', '1', '1', '1', '1', '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, NULL, '0', 0, 0, 0, 0, '0', 0, 0, '1', '1', NULL, 'ar_sa', '0', NULL, NULL),
-(81, 1, '0', 'test', 'testuser1@gmail.com', '1', 'dc93331986b0ff42d469aaeaf8a68808', NULL, '0', NULL, '$2y$10$KPZ2fL00hR/s8KiWCsQfBeKwzmtzXiIjGA3/O9dbwA/TV3j3bWRNW', '0', NULL, NULL, NULL, '1', '0', NULL, '0', NULL, NULL, 0, 0, '1', '0', '0', NULL, 0, 0, 0, 0, 0, 0, '0', '0', NULL, 'Test', 'USEr 1', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-03-06 10:02:48', '2023-03-21 05:29:09', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '1', 'public', 'public', 'friends', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', '1', '1', '1', '1', '1', '1', '1', '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, NULL, '0', 0, 0, 0, 0, '0', 0, 0, '1', '1', NULL, 'en_us', '0', NULL, NULL);
+(81, 1, '0', 'test', 'testuser1@gmail.com', '1', 'dc93331986b0ff42d469aaeaf8a68808', NULL, '0', NULL, '$2y$10$KPZ2fL00hR/s8KiWCsQfBeKwzmtzXiIjGA3/O9dbwA/TV3j3bWRNW', '0', NULL, NULL, NULL, '1', '0', NULL, '0', NULL, NULL, 0, 0, '1', '0', '0', NULL, 0, 0, 0, 0, 0, 0, '0', '0', NULL, 'Test', 'USEr 1', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-03-06 10:02:48', '2023-03-25 06:35:24', '2023-03-23 06:22:50', '127.0.0.1', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '1', 'public', 'public', 'friends', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', 'public', '1', '1', '1', '1', '1', '1', '1', '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, '0', NULL, NULL, '0', 0, 0, 0, 0, '0', 0, 0, '1', '1', NULL, 'en_us', '0', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -5274,8 +5281,65 @@ INSERT INTO `users_sessions` (`session_id`, `session_token`, `session_date`, `us
 (68, '5e7a35f831bd63dc09b3bee412eeef7d', '2023-02-28 14:36:30', 2, 'Chrome', 'Windows 10', '182.185.201.135'),
 (69, '9762f75d9b31716827386692232e7f26', '2023-03-01 02:55:40', 1, 'Chrome', 'Mac OS X', '85.255.235.190'),
 (71, '322076ebf150ed7a16db3b29828cb5cb', '2023-03-06 10:03:43', 81, 'Chrome', 'Windows 10', '127.0.0.1'),
-(72, '313d756a850cb8758eddcf3a64bc7ad0', '2023-03-21 04:41:07', 81, 'Chrome', 'Windows 10', '127.0.0.1');
+(72, '313d756a850cb8758eddcf3a64bc7ad0', '2023-03-21 04:41:07', 81, 'Chrome', 'Windows 10', '127.0.0.1'),
+(73, '80f0614b8db601cc110d0647c314a4a8', '2023-03-22 11:18:59', 81, 'Chrome', 'Windows 10', '127.0.0.1'),
+(74, 'ec2e3525b336d31cde18a312f938c388', '2023-03-23 06:22:53', 81, 'Chrome', 'Windows 10', '127.0.0.1'),
+(75, 'b0e575dabfc348de0fc1f71de2b5519d', '2023-03-23 20:37:11', 81, 'Chrome', 'Windows 10', '127.0.0.1'),
+(76, '8d152456e6d1c442abc08c98b5e65dbf', '2023-03-24 11:25:16', 81, 'Chrome', 'Windows 10', '127.0.0.1'),
+(78, '2afb057209bacbf3ddb2cb6ca06a1d36', '2023-03-25 06:31:11', 81, 'Chrome', 'Windows 10', '127.0.0.1');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_group`
+--
+
+CREATE TABLE `user_group` (
+  `group_id` int NOT NULL,
+  `group_name` varchar(255) DEFAULT NULL,
+  `create_post` tinyint(1) DEFAULT NULL,
+  `create_articles` tinyint(1) DEFAULT '0',
+  `edit_article` tinyint DEFAULT NULL,
+  `view_article` tinyint DEFAULT NULL,
+  `delete_article` tinyint DEFAULT NULL,
+  `approve_article` tinyint DEFAULT NULL,
+  `share_post` tinyint(1) DEFAULT '0',
+  `add_comment` tinyint(1) DEFAULT '0',
+  `edit_comment` tinyint DEFAULT NULL,
+  `likes` tinyint(1) DEFAULT '0',
+  `star_rate` tinyint(1) DEFAULT '0',
+  `create_page` tinyint(1) DEFAULT '0',
+  `manager_page` tinyint(1) DEFAULT '0',
+  `add_friend` tinyint(1) DEFAULT '0',
+  `follow_page` tinyint(1) DEFAULT '0',
+  `follow_writer` tinyint(1) DEFAULT '0',
+  `manage_user` tinyint(1) DEFAULT '0',
+  `create_user_group` tinyint(1) DEFAULT '0',
+  `change_logo` tinyint(1) DEFAULT '0',
+  `control_panel_setting` tinyint(1) DEFAULT '0',
+  `approves_type` tinyint(1) DEFAULT '0',
+  `add_jobs` tinyint(1) DEFAULT '0',
+  `manage_support` tinyint(1) DEFAULT '0',
+  `approves_category` int DEFAULT NULL,
+  `disable_social_media` tinyint DEFAULT NULL,
+  `manage_reported_content` tinyint DEFAULT NULL,
+  `invite_researchers` tinyint DEFAULT NULL,
+  `can_add_tags` tinyint DEFAULT NULL,
+  `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `order_field` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `user_group`
+--
+
+INSERT INTO `user_group` (`group_id`, `group_name`, `create_post`, `create_articles`, `edit_article`, `view_article`, `delete_article`, `approve_article`, `share_post`, `add_comment`, `edit_comment`, `likes`, `star_rate`, `create_page`, `manager_page`, `add_friend`, `follow_page`, `follow_writer`, `manage_user`, `create_user_group`, `change_logo`, `control_panel_setting`, `approves_type`, `add_jobs`, `manage_support`, `approves_category`, `disable_social_media`, `manage_reported_content`, `invite_researchers`, `can_add_tags`, `description`, `order_field`) VALUES
+(1, 'superadmin', 1, 1, NULL, NULL, NULL, NULL, 1, 1, NULL, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, 'dd', 1),
+(2, 'admin', 1, 1, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, '', 2),
+(3, 'moderator', 1, 1, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, '', 3),
+(4, 'polex clan', 1, 1, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, '', 4),
+(5, 'researcher', 1, 1, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, '', 5),
+(6, 'political personality', 1, 0, NULL, NULL, NULL, NULL, 0, 1, NULL, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 'yyy', 3);
 -- --------------------------------------------------------
 
 --
@@ -6129,6 +6193,12 @@ ALTER TABLE `users_sessions`
   ADD KEY `user_id` (`user_id`);
 
 --
+-- Indexes for table `user_group`
+--
+ALTER TABLE `user_group`
+  ADD PRIMARY KEY (`group_id`);
+
+--
 -- Indexes for table `verification_requests`
 --
 ALTER TABLE `verification_requests`
@@ -6343,7 +6413,7 @@ ALTER TABLE `funding_payments`
 -- AUTO_INCREMENT for table `games`
 --
 ALTER TABLE `games`
-  MODIFY `game_id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `game_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `games_players`
@@ -6781,7 +6851,13 @@ ALTER TABLE `users_searches`
 -- AUTO_INCREMENT for table `users_sessions`
 --
 ALTER TABLE `users_sessions`
-  MODIFY `session_id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `session_id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+
+--
+-- AUTO_INCREMENT for table `user_group`
+--
+ALTER TABLE `user_group`
+  MODIFY `group_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `verification_requests`
